@@ -41,21 +41,14 @@
             margin-bottom: 2rem;
             padding-bottom: 1.4rem;
             border-bottom: 1.5px solid rgba(30,80,50,0.08);
-            gap: 1rem;
+            gap: 1.5rem;
         }
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-        /* Contenedor de la imagen izquierda */
+        /* Imagen izquierda */
         .logo-emblem {
+            height: 70px;          /* Ajusta según tu imagen */
             width: auto;
-            height: 60px;          /* Altura fija, ancho automático */
             display: flex;
             align-items: center;
-            justify-content: center;
             flex-shrink: 0;
         }
         .logo-emblem img {
@@ -65,36 +58,7 @@
             display: block;
         }
 
-        .titulos-inia { display: flex; flex-direction: column; gap: 0.1rem; }
-        .titulos-inia .ministerio {
-            font-size: 0.6rem;
-            font-weight: 600;
-            letter-spacing: 0.4px;
-            text-transform: uppercase;
-            color: #1e4d34;
-            background: rgba(30,80,50,0.06);
-            padding: 0.1rem 1rem;
-            border-radius: 40px;
-            display: inline-block;
-            width: fit-content;
-            border: 1px solid rgba(30,80,50,0.04);
-        }
-        .titulos-inia .inia {
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: #0d2a1a;
-            line-height: 1.1;
-        }
-        .titulos-inia .inia span { font-weight: 300; color: #2b6e43; }
-        .titulos-inia .estacion {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1e4d34;
-        }
-        .titulos-inia .estacion i { color: #2b6e43; margin-right: 6px; }
-
-        /* Contenedor derecho (logo + texto) */
+        /* Contenedor derecho (logo + badge) */
         .logo-inia-2026 {
             display: flex;
             align-items: center;
@@ -108,19 +72,19 @@
             flex-shrink: 0;
         }
         .logo-inia-2026 img {
-            height: 48px;           /* Tamaño del logo derecho */
+            height: 55px;           /* Más grande para que se vea bien */
             width: auto;
             display: block;
         }
         .logo-inia-2026 .badge-text {
             font-weight: 600;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: #123524;
             display: flex;
             align-items: center;
             gap: 4px;
         }
-        .logo-inia-2026 .badge-text i { color: #0f6c3b; font-size: 0.75rem; }
+        .logo-inia-2026 .badge-text i { color: #0f6c3b; font-size: 0.85rem; }
 
         /* ===== EL RESTO DEL CSS (botones, footer, responsive) ===== */
         .grid-botones {
@@ -295,20 +259,19 @@
         @media (max-width: 992px) {
             .grid-botones { grid-template-columns: repeat(3, 66mm); gap: 0.9rem; }
             .menu-card { padding: 1.8rem 1.6rem; }
-            .logo-emblem { height: 50px; }
-            .logo-inia-2026 img { height: 40px; }
+            .logo-emblem { height: 60px; }
+            .logo-inia-2026 img { height: 48px; }
         }
         @media (max-width: 768px) {
             .grid-botones { grid-template-columns: repeat(2, 52mm); gap: 0.8rem; }
             .btn-drive { width: 52mm; height: 64mm; border-radius: 20px; padding: 0.2rem; }
             .btn-drive i { font-size: 3.2rem; }
             .btn-drive .label { font-size: 0.5rem; }
-            .header-inia { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-            .logo-inia-2026 { align-self: flex-start; }
+            .header-inia { flex-direction: column; align-items: center; gap: 0.8rem; }
+            .logo-inia-2026 { align-self: center; }
             .menu-card { padding: 1.4rem 1rem; border-radius: 32px; }
-            .titulos-inia .inia { font-size: 1.3rem; }
-            .logo-emblem { height: 44px; }
-            .logo-inia-2026 img { height: 36px; }
+            .logo-emblem { height: 50px; }
+            .logo-inia-2026 img { height: 42px; }
             .section-title { font-size: 0.8rem; padding: 0.35rem 1.2rem; white-space: normal; width: auto; }
         }
         @media (max-width: 480px) {
@@ -319,8 +282,8 @@
             .btn-drive .badge-num { font-size: 0.35rem; top: 3px; right: 5px; }
             .footer-menu { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
             .section-title { font-size: 0.7rem; padding: 0.25rem 0.8rem; }
-            .logo-emblem { height: 38px; }
-            .logo-inia-2026 img { height: 30px; }
+            .logo-emblem { height: 42px; }
+            .logo-inia-2026 img { height: 36px; }
             .logo-inia-2026 { padding: 0.2rem 0.8rem 0.2rem 0.5rem; }
         }
         a.btn-drive:link, a.btn-drive:visited, a.btn-drive:hover, a.btn-drive:active { text-decoration: none; }
@@ -332,21 +295,14 @@
 </head>
 <body>
 <div class="menu-card">
-    <!-- ===== ENCABEZADO MODIFICADO ===== -->
+    <!-- ===== ENCABEZADO SOLO IMÁGENES ===== -->
     <div class="header-inia">
-        <!-- IZQUIERDA: imagen encabezado-inia.png -->
-        <div class="header-left">
-            <div class="logo-emblem">
-                <img src="botones/encabezado-inia.png" alt="Encabezado INIA" />
-            </div>
-            <div class="titulos-inia">
-                <span class="ministerio"><i class="fas fa-leaf" style="margin-right:4px;font-size:0.5rem;"></i> PERÚ · Ministerio de Desarrollo Agrario y Riego</span>
-                <span class="inia">Instituto Nacional de <span>Innovación Agraria</span></span>
-                <span class="estacion"><i class="fas fa-map-pin"></i> Estación Experimental Agraria Illpa - Puno</span>
-            </div>
+        <!-- Imagen izquierda -->
+        <div class="logo-emblem">
+            <img src="botones/encabezado-inia.png" alt="Encabezado INIA" />
         </div>
 
-        <!-- DERECHA: logo-inia.png + texto -->
+        <!-- Imagen derecha + badge -->
         <div class="logo-inia-2026">
             <img src="botones/logo-inia.png" alt="Logo INIA" />
             <span class="badge-text"><i class="fas fa-folder-open"></i> Drive</span>
