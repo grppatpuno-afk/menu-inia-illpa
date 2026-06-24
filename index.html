@@ -22,7 +22,7 @@
                               radial-gradient(ellipse at 90% 80%, rgba(30,80,50,0.04) 0%, transparent 60%);
         }
         .menu-card {
-            max-width: 1300px;   /* Aumentado para dar más espacio */
+            max-width: 1300px;
             width: 100%;
             background: rgba(255,255,255,0.72);
             backdrop-filter: blur(20px) saturate(1.3);
@@ -41,28 +41,30 @@
             margin-bottom: 2rem;
             padding-bottom: 1.4rem;
             border-bottom: 1.5px solid rgba(30,80,50,0.08);
+            gap: 1rem;
         }
         .header-left {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
         }
+        /* Contenedor de la imagen izquierda */
         .logo-emblem {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: linear-gradient(145deg, #0f422b, #1a5a3a);
+            width: auto;
+            height: 60px;          /* Altura fija, ancho automático */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            color: #d4edc9;
-            box-shadow: 0 8px 24px rgba(15,66,43,0.25);
             flex-shrink: 0;
-            transition: transform 0.3s ease;
         }
-        .logo-emblem:hover { transform: scale(1.03); }
+        .logo-emblem img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
         .titulos-inia { display: flex; flex-direction: column; gap: 0.1rem; }
         .titulos-inia .ministerio {
             font-size: 0.6rem;
@@ -91,18 +93,25 @@
             color: #1e4d34;
         }
         .titulos-inia .estacion i { color: #2b6e43; margin-right: 6px; }
+
+        /* Contenedor derecho (logo + texto) */
         .logo-inia-2026 {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.8rem;
             background: rgba(255,255,255,0.5);
-            padding: 0.15rem 1rem 0.15rem 0.5rem;
+            padding: 0.3rem 1.2rem 0.3rem 0.8rem;
             border-radius: 60px;
             border: 1px solid rgba(255,255,255,0.8);
             backdrop-filter: blur(4px);
             box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            flex-shrink: 0;
         }
-        .logo-inia-2026 img { height: 38px; width: auto; display: block; }
+        .logo-inia-2026 img {
+            height: 48px;           /* Tamaño del logo derecho */
+            width: auto;
+            display: block;
+        }
         .logo-inia-2026 .badge-text {
             font-weight: 600;
             font-size: 0.7rem;
@@ -113,16 +122,17 @@
         }
         .logo-inia-2026 .badge-text i { color: #0f6c3b; font-size: 0.75rem; }
 
+        /* ===== EL RESTO DEL CSS (botones, footer, responsive) ===== */
         .grid-botones {
             display: grid;
-            grid-template-columns: repeat(4, 66mm);  /* +10% */
+            grid-template-columns: repeat(4, 66mm);
             justify-content: center;
-            gap: 1rem;   /* Aumentamos el espacio entre botones */
+            gap: 1rem;
             margin: 0.8rem 0 1.2rem;
         }
         .section-title {
             grid-column: 1 / -1;
-            font-size: 1rem;   /* un poco más grande */
+            font-size: 1rem;
             font-weight: 600;
             letter-spacing: 0.3px;
             color: #0d2a1a;
@@ -146,8 +156,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            width: 66mm;          /* +10% */
-            height: 80mm;         /* +10% */
+            width: 66mm;
+            height: 80mm;
             padding: 0.3rem 0.3rem 0.2rem;
             border-radius: 24px;
             background: rgba(255,255,255,0.6);
@@ -184,7 +194,6 @@
         }
         .btn-drive:active { transform: scale(0.95); transition-duration: 0.08s; }
 
-        /* Contenedor de imagen/icono ocupa todo el ancho */
         .btn-drive .icon-wrapper {
             display: flex;
             align-items: center;
@@ -199,26 +208,21 @@
             overflow: hidden;
         }
         .btn-drive:hover .icon-wrapper { background: rgba(30,80,50,0.06); transform: scale(1.02); }
-
-        /* Imagen más grande */
         .btn-drive img {
             width: 100%;
             height: auto;
-            max-height: 92%;    /* casi todo el contenedor */
+            max-height: 92%;
             object-fit: contain;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.02));
             transition: transform 0.3s ease;
         }
         .btn-drive:hover img { transform: scale(1.04); }
-
-        /* Icono más grande */
         .btn-drive i {
-            font-size: 4.4rem;   /* +10% */
+            font-size: 4.4rem;
             color: #0f6c3b;
             transition: transform 0.3s ease;
         }
         .btn-drive:hover i { transform: scale(1.06); color: #0a5a30; }
-
         .btn-drive .label {
             font-size: 0.6rem;
             font-weight: 600;
@@ -283,7 +287,7 @@
         .footer-menu .stats { display: flex; align-items: center; gap: 0.3rem; font-weight: 500; color: #1e4d34; }
         .footer-menu .stats i { color: #1b6e3f; }
 
-        /* Responsive con tamaños aumentados */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1100px) {
             .grid-botones { grid-template-columns: repeat(4, 60mm); gap: 0.9rem; }
             .btn-drive { width: 60mm; height: 72mm; }
@@ -291,6 +295,8 @@
         @media (max-width: 992px) {
             .grid-botones { grid-template-columns: repeat(3, 66mm); gap: 0.9rem; }
             .menu-card { padding: 1.8rem 1.6rem; }
+            .logo-emblem { height: 50px; }
+            .logo-inia-2026 img { height: 40px; }
         }
         @media (max-width: 768px) {
             .grid-botones { grid-template-columns: repeat(2, 52mm); gap: 0.8rem; }
@@ -301,7 +307,8 @@
             .logo-inia-2026 { align-self: flex-start; }
             .menu-card { padding: 1.4rem 1rem; border-radius: 32px; }
             .titulos-inia .inia { font-size: 1.3rem; }
-            .logo-emblem { width: 46px; height: 46px; font-size: 1.3rem; }
+            .logo-emblem { height: 44px; }
+            .logo-inia-2026 img { height: 36px; }
             .section-title { font-size: 0.8rem; padding: 0.35rem 1.2rem; white-space: normal; width: auto; }
         }
         @media (max-width: 480px) {
@@ -312,6 +319,9 @@
             .btn-drive .badge-num { font-size: 0.35rem; top: 3px; right: 5px; }
             .footer-menu { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
             .section-title { font-size: 0.7rem; padding: 0.25rem 0.8rem; }
+            .logo-emblem { height: 38px; }
+            .logo-inia-2026 img { height: 30px; }
+            .logo-inia-2026 { padding: 0.2rem 0.8rem 0.2rem 0.5rem; }
         }
         a.btn-drive:link, a.btn-drive:visited, a.btn-drive:hover, a.btn-drive:active { text-decoration: none; }
         @keyframes fadeUp {
@@ -322,20 +332,28 @@
 </head>
 <body>
 <div class="menu-card">
+    <!-- ===== ENCABEZADO MODIFICADO ===== -->
     <div class="header-inia">
+        <!-- IZQUIERDA: imagen encabezado-inia.png -->
         <div class="header-left">
-            <div class="logo-emblem"><i class="fas fa-seedling"></i></div>
+            <div class="logo-emblem">
+                <img src="botones/encabezado-inia.png" alt="Encabezado INIA" />
+            </div>
             <div class="titulos-inia">
                 <span class="ministerio"><i class="fas fa-leaf" style="margin-right:4px;font-size:0.5rem;"></i> PERÚ · Ministerio de Desarrollo Agrario y Riego</span>
                 <span class="inia">Instituto Nacional de <span>Innovación Agraria</span></span>
                 <span class="estacion"><i class="fas fa-map-pin"></i> Estación Experimental Agraria Illpa - Puno</span>
             </div>
         </div>
+
+        <!-- DERECHA: logo-inia.png + texto -->
         <div class="logo-inia-2026">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Crect width='100' height='60' fill='%231f4d33' rx='12'/%3E%3Ctext x='14' y='38' font-family='Inter, sans-serif' font-weight='700' font-size='20' fill='%23f3f9f0'%3EINIA%3C/text%3E%3Ctext x='54' y='38' font-family='Inter, sans-serif' font-weight='300' font-size='14' fill='%23cde0cb'%3E2026%3C/text%3E%3C/svg%3E" alt="INIA 2026" />
+            <img src="botones/logo-inia.png" alt="Logo INIA" />
             <span class="badge-text"><i class="fas fa-folder-open"></i> Drive</span>
         </div>
     </div>
+
+    <!-- ===== BOTONES (sin cambios) ===== -->
     <div class="grid-botones">
         <div class="section-title"><i class="fas fa-map-pin"></i> Enlaces de la Estación Experimental Agraria Illpa - Puno</div>
         <a href="https://docs.google.com/spreadsheets/d/18ZhIl2GTzpXvX6uFUuJjjKeFtPtWPbnLagn9KpfO3JQ/edit?gid=954890897#gid=954890897" class="btn-drive" target="_blank"><span class="icon-wrapper"><img src="botones/boton01.png" alt="01" /></span><span class="label">Carpeta 1</span><span class="badge-num">01</span></a>
@@ -360,6 +378,8 @@
         <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fab fa-google-drive"></i></span><span class="label">Carpeta 19</span><span class="badge-num">19</span></a>
         <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fab fa-google-drive"></i></span><span class="label">Carpeta 20</span><span class="badge-num">20</span></a>
     </div>
+
+    <!-- ===== PIE ===== -->
     <div class="footer-menu">
         <div class="left"><i class="fas fa-pen-fancy"></i><span>Edita los <strong>href</strong> con tus enlaces de Drive.</span></div>
         <div class="badge-edit"><i class="fas fa-image"></i> Reemplaza <code>&lt;i&gt;</code> por <code>&lt;img&gt;</code> para iconos personalizados.</div>
