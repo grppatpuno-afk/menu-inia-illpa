@@ -22,7 +22,7 @@
                               radial-gradient(ellipse at 90% 80%, rgba(30,80,50,0.04) 0%, transparent 60%);
         }
         .menu-card {
-            max-width: 1200px;
+            max-width: 1300px;   /* Aumentado para dar más espacio */
             width: 100%;
             background: rgba(255,255,255,0.72);
             backdrop-filter: blur(20px) saturate(1.3);
@@ -112,16 +112,17 @@
             gap: 4px;
         }
         .logo-inia-2026 .badge-text i { color: #0f6c3b; font-size: 0.75rem; }
+
         .grid-botones {
             display: grid;
-            grid-template-columns: repeat(4, 60mm);
+            grid-template-columns: repeat(4, 66mm);  /* +10% */
             justify-content: center;
-            gap: 0.9rem;
+            gap: 1rem;   /* Aumentamos el espacio entre botones */
             margin: 0.8rem 0 1.2rem;
         }
         .section-title {
             grid-column: 1 / -1;
-            font-size: 0.95rem;
+            font-size: 1rem;   /* un poco más grande */
             font-weight: 600;
             letter-spacing: 0.3px;
             color: #0d2a1a;
@@ -138,14 +139,15 @@
         }
         .section-title i { margin-right: 10px; color: #0f6c3b; font-size: 0.9rem; }
         .section-title:hover { background: rgba(255,255,255,0.85); transform: translateY(-1px); }
+
         .btn-drive {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            width: 60mm;
-            height: 72mm;
+            width: 66mm;          /* +10% */
+            height: 80mm;         /* +10% */
             padding: 0.3rem 0.3rem 0.2rem;
             border-radius: 24px;
             background: rgba(255,255,255,0.6);
@@ -182,42 +184,41 @@
         }
         .btn-drive:active { transform: scale(0.95); transition-duration: 0.08s; }
 
-        /* ===== CONTENEDOR DE IMAGEN/ICONO OCUPA TODO EL ANCHO ===== */
+        /* Contenedor de imagen/icono ocupa todo el ancho */
         .btn-drive .icon-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;            /* ocupa todo el ancho del botón */
-            flex: 1 1 auto;        /* ocupa el espacio disponible */
-            min-height: 0;          /* permite que se encaja */
+            width: 100%;
+            flex: 1 1 auto;
+            min-height: 0;
             border-radius: 16px;
             background: rgba(30,80,50,0.02);
             transition: all 0.3s ease;
             padding: 0.2rem;
-            overflow: hidden;      /* para que no se desborde */
+            overflow: hidden;
         }
         .btn-drive:hover .icon-wrapper { background: rgba(30,80,50,0.06); transform: scale(1.02); }
 
-        /* ===== IMAGEN A TAMAÑO MÁXIMO ===== */
+        /* Imagen más grande */
         .btn-drive img {
             width: 100%;
             height: auto;
-            max-height: 90%;        /* casi todo el contenedor */
-            object-fit: contain;    /* mantiene la proporción */
+            max-height: 92%;    /* casi todo el contenedor */
+            object-fit: contain;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.02));
             transition: transform 0.3s ease;
         }
         .btn-drive:hover img { transform: scale(1.04); }
 
-        /* ===== ICONO A TAMAÑO MÁXIMO ===== */
+        /* Icono más grande */
         .btn-drive i {
-            font-size: 4rem;        /* tamaño enorme */
+            font-size: 4.4rem;   /* +10% */
             color: #0f6c3b;
             transition: transform 0.3s ease;
         }
         .btn-drive:hover i { transform: scale(1.06); color: #0a5a30; }
 
-        /* ===== ETIQUETA Y NÚMERO ===== */
         .btn-drive .label {
             font-size: 0.6rem;
             font-weight: 600;
@@ -282,19 +283,19 @@
         .footer-menu .stats { display: flex; align-items: center; gap: 0.3rem; font-weight: 500; color: #1e4d34; }
         .footer-menu .stats i { color: #1b6e3f; }
 
-        /* ===== RESPONSIVE ===== */
+        /* Responsive con tamaños aumentados */
         @media (max-width: 1100px) {
-            .grid-botones { grid-template-columns: repeat(4, 55mm); gap: 0.8rem; }
-            .btn-drive { width: 55mm; height: 66mm; }
+            .grid-botones { grid-template-columns: repeat(4, 60mm); gap: 0.9rem; }
+            .btn-drive { width: 60mm; height: 72mm; }
         }
         @media (max-width: 992px) {
-            .grid-botones { grid-template-columns: repeat(3, 60mm); gap: 0.8rem; }
+            .grid-botones { grid-template-columns: repeat(3, 66mm); gap: 0.9rem; }
             .menu-card { padding: 1.8rem 1.6rem; }
         }
         @media (max-width: 768px) {
-            .grid-botones { grid-template-columns: repeat(2, 48mm); gap: 0.7rem; }
-            .btn-drive { width: 48mm; height: 58mm; border-radius: 20px; padding: 0.2rem; }
-            .btn-drive i { font-size: 2.8rem; }
+            .grid-botones { grid-template-columns: repeat(2, 52mm); gap: 0.8rem; }
+            .btn-drive { width: 52mm; height: 64mm; border-radius: 20px; padding: 0.2rem; }
+            .btn-drive i { font-size: 3.2rem; }
             .btn-drive .label { font-size: 0.5rem; }
             .header-inia { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
             .logo-inia-2026 { align-self: flex-start; }
@@ -304,9 +305,9 @@
             .section-title { font-size: 0.8rem; padding: 0.35rem 1.2rem; white-space: normal; width: auto; }
         }
         @media (max-width: 480px) {
-            .grid-botones { grid-template-columns: repeat(2, 42mm); gap: 0.6rem; }
-            .btn-drive { width: 42mm; height: 52mm; border-radius: 16px; padding: 0.15rem; }
-            .btn-drive i { font-size: 2rem; }
+            .grid-botones { grid-template-columns: repeat(2, 46mm); gap: 0.6rem; }
+            .btn-drive { width: 46mm; height: 56mm; border-radius: 16px; padding: 0.15rem; }
+            .btn-drive i { font-size: 2.4rem; }
             .btn-drive .label { font-size: 0.45rem; padding: 0.05rem 0.4rem; }
             .btn-drive .badge-num { font-size: 0.35rem; top: 3px; right: 5px; }
             .footer-menu { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
