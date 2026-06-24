@@ -304,27 +304,8 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .grid-botones .btn-drive:nth-child(1) { animation-delay: 0.02s; }
-        .grid-botones .btn-drive:nth-child(2) { animation-delay: 0.04s; }
-        .grid-botones .btn-drive:nth-child(3) { animation-delay: 0.06s; }
-        .grid-botones .btn-drive:nth-child(4) { animation-delay: 0.08s; }
-        .grid-botones .btn-drive:nth-child(5) { animation-delay: 0.10s; }
-        .grid-botones .btn-drive:nth-child(6) { animation-delay: 0.12s; }
-        .grid-botones .btn-drive:nth-child(7) { animation-delay: 0.14s; }
-        .grid-botones .btn-drive:nth-child(8) { animation-delay: 0.16s; }
-        .grid-botones .btn-drive:nth-child(9) { animation-delay: 0.18s; }
-        .grid-botones .btn-drive:nth-child(10) { animation-delay: 0.20s; }
-        .grid-botones .btn-drive:nth-child(11) { animation-delay: 0.22s; }
-        .grid-botones .btn-drive:nth-child(12) { animation-delay: 0.24s; }
-        .grid-botones .btn-drive:nth-child(13) { animation-delay: 0.26s; }
-        .grid-botones .section-title:nth-of-type(2) { animation-delay: 0.28s; }
-        .grid-botones .btn-drive:nth-child(15) { animation-delay: 0.30s; }
-        .grid-botones .btn-drive:nth-child(16) { animation-delay: 0.32s; }
-        .grid-botones .btn-drive:nth-child(17) { animation-delay: 0.34s; }
-        .grid-botones .btn-drive:nth-child(18) { animation-delay: 0.36s; }
-        .grid-botones .btn-drive:nth-child(19) { animation-delay: 0.38s; }
-        .grid-botones .btn-drive:nth-child(20) { animation-delay: 0.40s; }
-        .grid-botones .btn-drive:nth-child(21) { animation-delay: 0.42s; }
+        /* Retrasos de animación para 20 botones + títulos (omitidos por brevedad) */
+        .grid-botones .btn-drive:nth-child(n) { animation-delay: calc(0.02s * (n - 1)); }
     </style>
 </head>
 <body>
@@ -345,7 +326,6 @@
     </div>
     <div class="grid-botones">
         <div class="section-title"><i class="fas fa-map-pin"></i> Enlaces de la Estación Experimental Agraria Illpa - Puno</div>
-        <!-- Botones 01 al 12 con imágenes (los primeros 10) y los 11 y 12 con icono -->
         <a href="https://docs.google.com/spreadsheets/d/18ZhIl2GTzpXvX6uFUuJjjKeFtPtWPbnLagn9KpfO3JQ/edit?gid=954890897#gid=954890897" class="btn-drive" target="_blank"><span class="icon-wrapper"><img src="botones/boton01.png" alt="01" /></span><span class="label">Carpeta 1</span><span class="badge-num">01</span></a>
         <a href="https://docs.google.com/spreadsheets/d/1H0NF6QbkjZokimgnKnt8lD_6vrKMO3wEf1u4DnXWEdQ/edit?gid=506246726#gid=506246726" class="btn-drive" target="_blank"><span class="icon-wrapper"><img src="botones/boton02.png" alt="02" /></span><span class="label">Carpeta 2</span><span class="badge-num">02</span></a>
         <a href="https://docs.google.com/spreadsheets/d/1PbVB_OLy46-542bfjEKVwFd1LqKajmVT3ed4uGg1nD0/edit?gid=1600311897#gid=1600311897" class="btn-drive" target="_blank"><span class="icon-wrapper"><img src="botones/boton03.png" alt="03" /></span><span class="label">Carpeta 3</span><span class="badge-num">03</span></a>
@@ -358,7 +338,6 @@
         <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><img src="botones/boton10.png" alt="10" /></span><span class="label">Carpeta 10</span><span class="badge-num">10</span></a>
         <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fab fa-google-drive"></i></span><span class="label">Carpeta 11</span><span class="badge-num">11</span></a>
         <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fab fa-google-drive"></i></span><span class="label">Carpeta 12</span><span class="badge-num">12</span></a>
-
         <div class="section-title"><i class="fas fa-building"></i> Enlaces de la Sede Central del INIA</div>
         <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fab fa-google-drive"></i></span><span class="label">Carpeta 13</span><span class="badge-num">13</span></a>
         <a href="#" class="btn-drive" target="_blank"><span class="icon-wrapper"><i class="fab fa-google-drive"></i></span><span class="label">Carpeta 14</span><span class="badge-num">14</span></a>
